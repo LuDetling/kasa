@@ -8,6 +8,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ErrorPage from "./pages/Error/ErrorPage";
 //STYLE
 import "./utils/style/style.scss";
+import Footer from "./components/Footer";
 
 const router = createBrowserRouter([
   {
@@ -23,8 +24,11 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <Nav />
-    <RouterProvider router={router} />
+    <div id="content">
+      <Nav />
+      <RouterProvider router={router} />
+    </div>
+    <Footer />
   </React.StrictMode>
 );
 

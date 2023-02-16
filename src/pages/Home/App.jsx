@@ -1,5 +1,5 @@
 import LittleBanniere from "../../components/LittleBanniere";
-import banniere from "../../assets/coline-banniere.png";
+import banniere from "../../assets/banniere-home.png";
 import CardLocation from "../../components/CardLocation";
 import data from "../../json/data.json";
 
