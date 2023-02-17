@@ -4,7 +4,7 @@ import Slider from "../../components/Slider";
 import Collapse from "../../components/Collapse";
 import datas from "../../json/data.json";
 import colors from "../../utils/style/colors";
-import ErrorPage from "../Error/ErrorPage";
+import { Navigate } from "react-router-dom";
 
 const ContentLogement = styled.div`
   padding: 20px;
@@ -67,9 +67,16 @@ export default function Logement() {
   const location = useLocation();
   const idLocation = location.pathname.split("/");
   const data = datas.filter((data) => data.id === idLocation[2])[0];
+  const slideAlone = {
+    height: "223px",
+  };
   return data ? (
     <ContentLogement>
-      <Slider srcImg={data.pictures} heightImg="223px" />
+      {data.pictures.length > 1 ? (
+        <Slider srcImg={data.pictures} heightImg="223px" />
+      ) : (
+        <img src={data.pictures[0]} style={slideAlone} alt="" />
+      )}
       <h1>{data.title}</h1>
       <div className="location">{data.location}</div>
       <div className="tags">
@@ -79,9 +86,9 @@ export default function Logement() {
       </div>
       <div className="rating-profil">
         <div className="rating">
-          {stars.map((star, index) => (
+          {stars.map((star) => (
             <svg
-              key={index}
+              key={star}
               width="18"
               height="18"
               viewBox="0 0 18 18"
@@ -111,6 +118,6 @@ export default function Logement() {
       <Collapse bouton="Équipements" list={data.equipments} />
     </ContentLogement>
   ) : (
-    <ErrorPage />
+    <Navigate to={"/errorPage"} replace={true} />
   );
 }

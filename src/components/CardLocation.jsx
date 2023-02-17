@@ -3,21 +3,22 @@ import colors from "../utils/style/colors";
 
 const ContentLocation = styled.div`
   display: grid;
-  background-color: #f6f6f6;
-  grid-template-columns: repeat(3, 1fr);
-  @media screen and (max-width: 1200px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  @media screen and (max-width: 800px) {
-    grid-template-columns: repeat(1, 1fr);
-    padding: 0;
-    background-color: inherit;
-  }
-  padding: 56px 50px;
+  grid-template-columns: repeat(1, 1fr);
   border-radius: 10px;
   margin: 20px 0;
   row-gap: 50px;
   column-gap: 60px;
+  @media screen and (min-width: 800px) {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0;
+    background-color: inherit;
+  }
+  @media screen and (min-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+    background-color: #f6f6f6;
+    padding: 56px 50px;
+    margin: 20px 40px;
+  }
   .cardLocation {
     flex-grow: 3;
     flex-shrink: 3;
@@ -45,6 +46,12 @@ const ContentLocation = styled.div`
       height: 100%;
       width: 100%;
       z-index: 1;
+      transition: 0.5s ease-out;
+    }
+    &:hover {
+      &::before {
+        transform: translateY(-100%);
+      }
     }
     img {
       position: absolute;

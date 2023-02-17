@@ -1,39 +1,41 @@
 import styled from "styled-components";
 import colors from "../utils/style/colors.js";
+import { NavLink } from "react-router-dom";
 
-const ContentNav = styled.nav`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
+const ContentHeader = styled.header`
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    a {
+      color: ${colors.primary};
+      text-decoration: none;
+      font-family: "montserrat-medium";
+      text-transform: uppercase;
+      font-size: 12px;
+      &:active,
+      &:hover,
+      &.active {
+        text-decoration: underline;
+      }
+      &:not(:last-child) {
+        margin-right: 10px;
+      }
+      svg {
+        width: 145px;
+        height: 47px;
+      }
+    }
+  }
 `;
 
-const NavLink = styled.a`
-  color: ${colors.primary};
-  text-decoration: none;
-  font-family: "montserrat-medium";
-  text-transform: uppercase;
-  font-size: 12px;
-  &:active,
-  &:hover,
-  &.active {
-    text-decoration: underline;
-  }
-  &:not(:last-child) {
-    margin-right: 10px;
-  }
-  svg {
-    width: 145px;
-    height: 47px;
-  }
-`;
-
-const Nav = () => {
+export default function Nav() {
   return (
-    <header>
-      <ContentNav>
+    <ContentHeader>
+      <nav>
         <div className="logo">
-          <NavLink href="/">
+          <a href="/">
             <svg
               width="211"
               height="68"
@@ -62,17 +64,13 @@ const Nav = () => {
                 fill="#FF6060"
               />
             </svg>
-          </NavLink>
+          </a>
         </div>
         <div className="content-link">
-          <NavLink href="/" className="active">
-            Accueil
-          </NavLink>
-          <NavLink href="/about">A Propos</NavLink>
+          <NavLink to="/">Accueil</NavLink>
+          <NavLink to="/about">A Propos</NavLink>
         </div>
-      </ContentNav>
-    </header>
+      </nav>
+    </ContentHeader>
   );
-};
-
-export default Nav;
+}

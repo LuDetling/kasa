@@ -10,6 +10,14 @@ const BanniereContent = styled.div`
   overflow: hidden;
   border-radius: 10px;
   background-color: black;
+  max-height: 255px;
+  height: 111px;
+  @media screen and (min-width: 1200px) {
+    margin: 20px 40px 0;
+  }
+  @media screen and (min-width: 800px) {
+    height: 223px;
+  }
   img {
     width: 100%;
     height: 100%;
@@ -37,11 +45,8 @@ const BanniereContent = styled.div`
 `;
 
 const LittleBanniere = (props) => {
-  const height = {
-    height: props.heightImg,
-  };
   return (
-    <BanniereContent style={height}>
+    <BanniereContent>
       <img src={props.srcImg} alt="" />
       <div>{props.textImg}</div>
     </BanniereContent>
