@@ -47,7 +47,7 @@ const Collapse = (props) => {
       >
         {props.bouton}
         <svg
-          className={open && "active"}
+          className={open ? "active" : null}
           width="16"
           height="10"
           viewBox="0 0 16 10"
@@ -63,6 +63,13 @@ const Collapse = (props) => {
       {open && (
         <div className="toggle">
           <p>{props.content}</p>
+          {props.list && (
+            <ul>
+              {props.list.map((equipment, index) => (
+                <li key={index}>{equipment}</li>
+              ))}
+            </ul>
+          )}
         </div>
       )}
     </ContentCollapse>

@@ -9,6 +9,7 @@ import ErrorPage from "./pages/Error/ErrorPage";
 //STYLE
 import "./utils/style/style.scss";
 import Footer from "./components/Footer";
+import Logement from "./pages/Logement/Logement";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
   {
     path: "/about",
     element: <About />,
+  },
+  {
+    path: "/logement/:logementId",
+    element: <Logement />,
   },
 ]);
 

@@ -5,7 +5,7 @@ import Collapse from "../../components/Collapse";
 const About = () => {
   return (
     <div className="App">
-      <LittleBanniere srcImg={banniere} />
+      <LittleBanniere srcImg={banniere} heightImg="223px" />
       <Collapse
         bouton="Fiabilité"
         content="Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées  par nos équipes."

@@ -31,7 +31,7 @@ const ContentLocation = styled.div`
     overflow: hidden;
     display: flex;
     align-items: flex-end;
-    cursor: pointer;
+    text-decoration: none;
     &::before {
       content: "";
       background: linear-gradient(
@@ -75,10 +75,14 @@ const CardLocation = (props) => {
   return (
     <ContentLocation>
       {props.data.map((location) => (
-        <div className="cardLocation" key={location.id}>
+        <a
+          className="cardLocation"
+          key={location.id}
+          href={`/logement/${location.id}`}
+        >
           <img src={location.cover} alt={location.title} />
           <h2>{location.title}</h2>
-        </div>
+        </a>
       ))}
     </ContentLocation>
   );
