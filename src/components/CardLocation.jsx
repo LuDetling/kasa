@@ -17,7 +17,6 @@ const ContentLocation = styled.div`
     grid-template-columns: repeat(3, 1fr);
     background-color: #f6f6f6;
     padding: 56px 50px;
-    margin: 20px 40px;
   }
   .cardLocation {
     flex-grow: 3;
@@ -64,11 +63,6 @@ const ContentLocation = styled.div`
       transform: translateY(0);
       transition: 0.5s;
     }
-    /* &:hover {
-      img {
-        transform: translateY(0);
-      }
-    } */
     h2 {
       color: white;
       z-index: 2;

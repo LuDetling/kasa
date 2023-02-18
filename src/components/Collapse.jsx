@@ -17,6 +17,10 @@ const ContentCollapse = styled.div`
     display: flex;
     justify-content: space-between;
     text-align: center;
+    @media screen and (min-width: 800px) {
+      padding: 13px 20px;
+      font-size: 18px;
+    }
     svg {
       height: 16px;
       width: 16px;
@@ -33,6 +37,10 @@ const ContentCollapse = styled.div`
     padding: 23px 11.5px;
     font-size: 12px;
     line-height: 17px;
+    @media screen and (min-width: 800px) {
+      font-size: 18px;
+      line-height: 26px;
+    }
   }
 `;
 

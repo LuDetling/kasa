@@ -6,6 +6,9 @@ body {
     background: #ffffff;
     .App {
         margin: 20px;
+        @media screen and (min-width: 800px) {
+            margin: 20px 40px;
+        }
     }
     #root {
         display: flex;

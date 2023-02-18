@@ -8,6 +8,9 @@ const ContentHeader = styled.header`
     justify-content: space-between;
     align-items: center;
     padding: 20px;
+    @media screen and (min-width: 800px) {
+      padding: 40px 40px;
+    }
     a {
       color: ${colors.primary};
       text-decoration: none;
@@ -21,6 +24,12 @@ const ContentHeader = styled.header`
       }
       &:not(:last-child) {
         margin-right: 10px;
+      }
+      @media screen and (min-width: 800px) {
+        font-size: 24px;
+        &:not(:last-child) {
+          margin-right: 57px;
+        }
       }
       svg {
         width: 145px;

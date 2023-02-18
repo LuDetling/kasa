@@ -12,9 +12,6 @@ const BanniereContent = styled.div`
   background-color: black;
   max-height: 255px;
   height: 111px;
-  @media screen and (min-width: 1200px) {
-    margin: 20px 40px 0;
-  }
   @media screen and (min-width: 800px) {
     height: 223px;
   }

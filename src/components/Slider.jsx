@@ -8,6 +8,9 @@ const ContentSlider = styled.div`
     height: 255px;
     width: 100%;
     object-fit: cover;
+    @media screen and (min-width: 800px) {
+      height: 415px;
+    }
   }
 `;
 
